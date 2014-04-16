@@ -2,45 +2,45 @@
 #include <stdlib.h>
 
 int main(int argc, char** args) {
-	int num_rows, pos, target_pos;
+	int m, n, b;
 
-	scanf("%d %d %d", &num_rows, &pos, &target_pos);
+	scanf("%d %d %d", &m, &n, &b);
 
-	int num_moves = 0;
+	int v = 0;
 
-	int pos_2_counter = 0;
+	int n_2_counter = 0;
 
-	while (pos != target_pos) {
-		num_moves++;
+	while (n != b) {
+		v++;
 
-		// printf("#%d: pos = %d, target_pos = %d\n", num_moves, pos, target_pos);
+		// printf("#%d: n = %d, b = %d\n", v, n, b);
 
-		if (pos % 2 == 0)
-			pos /= 2;
+		if (n % 2 == 0)
+			n /= 2;
 		else 
-			pos = 3 * pos + 1;
+			n = 3 * n + 1;
 
-		if (pos == target_pos) {
-			printf("%d\n", num_moves);
+		if (n == b) {
+			printf("%d\n", v);
 			return 0;
 		}
 
-		if (pos < 1 || pos > num_rows) {
+		if (n < 1 || n > m) {
 			printf("%d\n", -1);
 			return 0;
 		}
 
-		if (pos == 2) {
-			pos_2_counter++;
+		if (n == 2) {
+			n_2_counter++;
 		}
 
-		if (pos_2_counter == 9) {
+		if (n_2_counter == 9) {
 			printf("%d\n", -1);
 			return 0;
 		}
 	}
 
-	printf("%d\n", num_moves);
+	printf("%d\n", v);
 
 	return 0;
 }
