@@ -8,12 +8,9 @@ int main(int argc, char** args) {
 
 	int v = 0;
 
-	int n_2_counter = 0;
 
 	while (n != b) {
 		v++;
-
-		// printf("#%d: n = %d, b = %d\n", v, n, b);
 
 		if (n % 2 == 0)
 			n /= 2;
@@ -25,16 +22,7 @@ int main(int argc, char** args) {
 			return 0;
 		}
 
-		if (n < 1 || n > m) {
-			printf("%d\n", -1);
-			return 0;
-		}
-
-		if (n == 2) {
-			n_2_counter++;
-		}
-
-		if (n_2_counter == 9) {
+		if (n <= 1 || n > m) {
 			printf("%d\n", -1);
 			return 0;
 		}
