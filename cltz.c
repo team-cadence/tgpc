@@ -1,1 +1,1 @@
-p(k){printf("%d\n",k);exit(0);}m,n,b,v;main(){scanf("%d%d%d",&m,&n,&b);for(;n!=b;v++,n=(n%2)?3*n+1:n/2)if(n<2|n>m)p(-1);p(v);}
+p(k){printf("%d\n",k);exit(0);}m,n,b,v;main(){scanf("%d%d%d",&m,&n,&b);for(;n!=b;v++,n=n%2?3*n+1:n/2,n<2|n>m);p(v);}
